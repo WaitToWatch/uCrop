@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
@@ -61,7 +62,7 @@ public class ResultActivity extends BaseActivity {
 
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(new File(getIntent().getData().getPath()).getAbsolutePath(), options);
+        Bitmap bm = BitmapFactory.decodeFile(new File(getIntent().getData().getPath()).getAbsolutePath(), options);
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         final ActionBar actionBar = getSupportActionBar();
